@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { menu } from '$lib/stores/stores';
 	import type { NavItemsProps, UserTableProps } from '$lib/types/types';
-	import Burger from '$lib/ui/nav/burger.svelte';
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
+	import { menu } from '$lib/stores/stores';
+	import Burger from '$lib/ui/nav/burger.svelte';
 
 	let navElem: HTMLElement;
 
@@ -28,7 +28,7 @@
 		},
 		{
 			title: 'Settings',
-			slug: '/add-customer',
+			slug: '/settings',
 			visibleForRole: 'USER'
 		}
 	];
@@ -54,9 +54,9 @@
 					{#each navItems as entry, index (index)}
 						{#if user.role === 'ADMIN' || user.role === entry.visibleForRole}
 							<li>
-								<a class="" href={entry.slug} on:click={() => ($menu.isOpen = false)}
-									>{entry.title}</a
-								>
+								<a class="" href={entry.slug} on:click={() => ($menu.isOpen = false)}>
+									{entry.title}
+								</a>
 							</li>
 						{/if}
 					{/each}

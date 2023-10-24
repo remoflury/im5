@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({locals: {supabase, getSession}}) => 
     const userId = session.user.id
 
     // get user profile
-    const { data: users, error: err } = await supabase
+    const { data: user, error: err } = await supabase
       .from('profiles')
       .select('*')
       .eq('user_uid', userId)
@@ -24,6 +24,6 @@ export const load: PageServerLoad = async ({locals: {supabase, getSession}}) => 
     }
 
     return {
-      user: users[0]
+      user: user[0]
     }
 };
