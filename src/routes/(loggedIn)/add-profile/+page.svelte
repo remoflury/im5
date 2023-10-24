@@ -2,13 +2,17 @@
 	import { enhance } from '$app/forms';
 	import InputField from '$lib/components/forms/InputField.svelte';
 	import FormMessage from '$lib/components/forms/formMessage.svelte';
+	import Link from '$lib/components/link.svelte';
 	import PrimaryButton from '$lib/components/primaryButton.svelte';
 	import { slide } from 'svelte/transition';
 
 	export let data;
 	export let form;
 
-	console.log(data.companies);
+	// console.log(data.companies);
+	let isAdmin = false;
+
+	// $: console.log(isAdmin);
 
 	let loading = false;
 	$: if (form) loading = false;
@@ -52,11 +56,25 @@
 			<fieldset id="is-admin">
 				<div class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-1">
 					<label for="is-admin-false">No</label>
-					<input type="radio" name="is_admin" id="is-admin-false" checked />
+					<input
+						type="radio"
+						name="is_admin"
+						id="is-admin-false"
+						checked={isAdmin === false}
+						value={false}
+						on:change={() => (isAdmin = false)}
+					/>
 				</div>
 				<div class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-2">
 					<label for="is-admin-true">Yes</label>
-					<input type="radio" name="is_admin" id="is-admin-true" />
+					<input
+						type="radio"
+						name="is_admin"
+						id="is-admin-true"
+						checked={isAdmin === true}
+						value={true}
+						on:change={() => (isAdmin = true)}
+					/>
 				</div>
 			</fieldset>
 		</div>
@@ -68,4 +86,6 @@
 			<FormMessage message={form.message} success={form.success} />
 		</div>
 	{/if}
+
+	<Link text="Company does not exists? Add company." href="/add-company" />
 </section>

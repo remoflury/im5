@@ -12,7 +12,8 @@ export const load: PageServerLoad = async ({ locals: { supabase}}) => {
     .from('companies')
     .select('*')
 
-  if (err) throw error(500, "Error loading the companies.")
+  
+  if (err) throw error(500, err.message)
 
   return {
     companies: companies as CompanyProps[]
@@ -20,7 +21,7 @@ export const load: PageServerLoad = async ({ locals: { supabase}}) => {
 };
 
 export const actions: Actions = {
-  addprofile: async ({ request, locals: {supabase}}) => {
+  addprofile: async ({ request, locals: {adminSupabase, supabase}}) => {
     const formData =Object.fromEntries(await request.formData())
 
     // validation 
@@ -36,20 +37,42 @@ export const actions: Actions = {
       }
     }
 
-    console.log(formData)
-
-    // add user
-    const { data, error: err } = await supabase.auth.signUp({
-      email: formData.email.toString(),
-      password: '12345678',
+    // add user, use supabase auth admin
+    const { data: user, error: err } = await adminSupabase.auth.admin.createUser({
+        email: formData.email.toString(),
+        password: '12345678',
+        email_confirm: true
     })
+    // error handling
+    if (err) {
+      if (err.message == 'A user with this email address has already been registered') return {
+        message: 'User already exists',
+        success: false
+      }
+      throw error(500, err.message)
+    } 
 
-    if (err) throw error(500, 'Error creating user.')
+    const userId = user.user.id
 
-    console.log(data)
+    // add user to profiles table
+    const {  error: err2 } = await supabase
+      .from('profiles')
+      .insert([
+        { 
+          user_uid: userId,
+          company: formData.company,
+          email: formData.email,
+          first_name: formData.first_name,
+          last_name: formData.last_name,
+          role: formData.is_admin ? 'ADMIN' : 'USER'
+        }
+      ])
+      .select()
 
+    if (err2) throw error(500, err2.message)
+    
     return {
-      message: 'Company successfully added',
+      message: 'User successfully added',
       success: true,
     }
   }
