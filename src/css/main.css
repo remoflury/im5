@@ -15,8 +15,18 @@
     @apply container my-8
   }
 
-  input {
+  /* Form Styles */
+  label {
+    @apply text-sm
+  }
+
+  input:not(input[type="radio"]) {
     @apply px-4 py-2 border border-black block w-full;
     @apply focus:outline-none focus:border-cyan
+  }
+
+  select {
+    @apply px-4 py-2 border-black block w-full ;
+    @apply focus:outline-none focus:ring-1 focus:ring-cyan
   }
 }

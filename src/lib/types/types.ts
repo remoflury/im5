@@ -12,4 +12,10 @@ export type UserTableProps = {
   role: UserRoleProps,
 }
 
+export type CompanyProps = {
+  id: number,
+  company: string,
+  company_id: string
+}
+
 export type UserRoleProps = "ADMIN" | "USER"

@@ -12,8 +12,6 @@
 
 	let loading = false;
 	$: if (form) loading = false;
-
-	$: console.log(form);
 </script>
 
 <section>

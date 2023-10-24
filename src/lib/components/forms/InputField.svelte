@@ -29,7 +29,7 @@
 
 <div class="relative mt-4 first-of-type:mt-0 isolate">
 	<label
-		class="absolute bg-white p-1 translate-y-1/2 transition left-4 text-sm hover:cursor-text"
+		class="absolute bg-white p-1 translate-y-1/2 transition left-4 hover:cursor-text"
 		style={`transform: translateY(calc(${inputElemHeight / 2}px - 50%))`}
 		bind:this={labelElem}
 		for={label}
