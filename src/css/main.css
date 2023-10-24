@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply min-h-screen text-black
+  }
+
+  h1 {
+    @apply mb-8 text-3xl
+  }
+
+  main > section {
+    @apply container my-8
+  }
+
+  input {
+    @apply px-4 py-2 border border-black block w-full;
+    @apply focus:outline-none focus:border-cyan
+  }
+}
