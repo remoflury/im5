@@ -83,7 +83,13 @@
 	</form>
 	{#if form?.message}
 		<div transition:slide={{ duration: 350 }} class="mt-4">
-			<FormMessage message={form.message} success={form.success} />
+			<FormMessage
+				message={form.message}
+				success={form.success}
+				additionalMessage={form.success
+					? 'An email is not automatically sent. Please inform your customer by yourself.'
+					: ''}
+			/>
 		</div>
 	{/if}
 
