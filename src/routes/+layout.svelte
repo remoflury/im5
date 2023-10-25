@@ -20,6 +20,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>IM5 Projekt</title>
+</svelte:head>
+
 <main>
 	<slot />
 </main>
