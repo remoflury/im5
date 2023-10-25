@@ -3,6 +3,7 @@ import type { PageServerLoad } from "../$types";
 
 export const load: PageServerLoad = async ({locals: {supabase, getSession}}) => {
     const session = await getSession()
+// console.log('session :', session)
 
     // error handling
     if (!session) {

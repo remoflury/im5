@@ -1,14 +1,6 @@
 import { loginSchema } from "$lib/utils/zodSchemas";
 import { fail, type Actions, redirect } from "@sveltejs/kit";
 import { ZodError } from "zod";
-import type { PageServerLoad } from "./$types";
-
-export const load: PageServerLoad = async ({ locals: {getSession}}) => {
-  const session = await getSession()
-
-  // redirect if logged in
-  if (session) throw redirect(300, '/dashboard')
-};
 
 export const actions: Actions = {
   login: async ({request, url, locals: { supabase }}) => {
@@ -48,5 +40,12 @@ export const actions: Actions = {
       message: 'Please check your email for a magic link to log into the website.',
       success: true,
     }
+  },
+  logout: async ({locals: {supabase}}) => {
+    const { error } = await supabase.auth.signOut({scope: 'global'})
+
+    if (error) throw fail(500, {message: error.message})
+
+    throw redirect(300, '/')
   }
 };
