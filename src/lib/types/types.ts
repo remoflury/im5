@@ -23,5 +23,6 @@ export type UserRoleProps = "ADMIN" | "USER"
 export type NameWithCompanyProps = {
   first_name: string,
   last_name: string,
+  user_uid: string,
   company: string
 }

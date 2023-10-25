@@ -9,15 +9,10 @@
 	export let data;
 	export let form;
 
-	// console.log(data.companies);
 	let isAdmin = false;
-
-	// $: console.log(isAdmin);
 
 	let loading = false;
 	$: if (form) loading = false;
-
-	$: console.log(form);
 </script>
 
 <section>

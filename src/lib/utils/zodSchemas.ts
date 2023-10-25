@@ -32,3 +32,19 @@ export const addProfileSchema = z.object({
     .string({ required_error: 'Company is required.'})
     .min(1, { message: "Company is required."})
 })
+
+export const addNewProjectSchema = z.object({
+  project_name: z
+    .string({required_error: "A Projectname is required."})
+    .min(1, {message: "A Projectname is required."})
+    .max(20, {message: "Projectname can't be longer than 20 characters."})
+    .trim(),
+  project_description: z
+    .string({required_error: "A description is required."})
+    .min(1, {message: "A description is required."})
+    .max(300, {message: "Description can't be longer than 300 characters."})
+    .trim(),
+  person: z
+    .string({ required_error: 'Person is required.'})
+    .min(1, { message: "Person is required."})
+})
