@@ -6,8 +6,6 @@
 	export let data;
 
 	const user = data.user;
-
-	console.log(data.projects);
 </script>
 
 <section>
