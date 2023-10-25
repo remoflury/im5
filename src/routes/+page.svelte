@@ -13,6 +13,7 @@
 </script>
 
 <section>
+	<h1>Login</h1>
 	<form method="post" action="?/login" use:enhance on:submit={() => (loading = true)}>
 		<InputField
 			type="email"
