@@ -1,38 +1,48 @@
-# create-svelte
+# Projekt IM5
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Projekt Setup
+Installiere alle Dependencies.
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
+Erstelle eine .env Datei im project root und kopiere die environment variables rein. Kannst du gerne bei mir anfragen (;
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+Entwickle mit
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Ziel
+Die Bachelorarbeit befasst sich mit dem Thema Kundenbindung in Agenturen. Deshalb habe ich ein rudimentäres Tool erstellt, auf dem sich auserwählte Kunden einloggen können und ihre aktuellen Projekte einsehen. 
+Kunden können sich nicht selber registrieren, da nicht jeder Kunde Zugriff zur Plattform haben soll. 
+Das heisst, dass aber jede Person der Agentur neue Kunden dem Portal freischalten muss, sodass sich diese Kunden nur noch einloggen können.
+Somit gibt es zwei Rollen: User und Admins.
 
-To create a production version of your app:
+1. Admins
+Die Berechtigungen und Funktionen für Admins sind umfänglicher:
+  1. Sie müssen Firmen hinzufügen können.
+  2. Sie müssen Personen hinzufügen können. So wird auch gleich ein Login auf ihre Emailadresse erstellt. Die Personen werden auch einer Firma zugeteilt, da es möglich ist mehrere Kundenlogins pro Kunde zu haben.
+  3. Sie müssen Projekte erfassen können und einer Person zuweisen.
 
-```bash
-npm run build
-```
+2. User
+Haben aktuell nur Einsicht in die ihnen zugewiesenen Projekte.
 
-You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Techstack
+Das Tool benutzt folgende Technologien:
+1. Svelte bzw. SvelteKit als JS-Framework (mit SSR)
+2. Tailwind CSS
+3. Supabase mit SvelteKit Auth Helpers
+4. Zod für Formvalidierungen
+
+
+## Challenges
+Die Entwicklung des Frontends war relativ einfach. Challenge war für mich die Implementierung der Rollen, da diese verschiedene Berechtigungen haben. So konnte ich mit Enum Types eine gute Lösung finden, um diese Rollen in einer Column auf Supabase abzufangen. Was mir jedoch bis heute Probleme bereited sind die RLS (Row Level Security). Ein User sollte nicht in der Lage sein, ein Projekt in der Datenbank zu erfassen. Dies sollte Usern mit der Rolle Admin vorbehalten sein. Dies konnte ich mit RLS nicht implementieren.
+Auch die Nutzung von Zod war eine Challenge, da ich dies vorher noch nie benutzt hatte. Jedoch kommt man schnell rein, da es relativ logisch aufgebaut ist. Manchmal half hier auch ChatGPT (;
+
+## Quellen
+1. Dokumentationen (SvelteKit, Supabase, Zod)
+2. Stackoverflow
+3. ChatGPT
