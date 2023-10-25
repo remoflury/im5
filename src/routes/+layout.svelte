@@ -47,18 +47,18 @@
 		opacity: 40%;
 	}
 
-	/* @-webkit-keyframes move {
+	@-webkit-keyframes move {
 		from {
-			transform: translate(-20px, -50px) rotate(-90deg);
+			/* transform: translate(-20px, -50px) rotate(-90deg); */
+			transform: translate(-40%, -35%) rotate(-90deg);
 			border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
 		}
 
 		to {
-			transform: translate(20px, 50px) rotate(-10deg);
+			transform: translate(-60%, -65%) rotate(20deg);
 			border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
 		}
-	} */
-
+	}
 	@keyframes move {
 		from {
 			/* transform: translate(-20px, -50px) rotate(-90deg); */
@@ -67,7 +67,7 @@
 		}
 
 		to {
-			transform: translate(-60%, -65%) rotate(-10deg);
+			transform: translate(-60%, -65%) rotate(20deg);
 			border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
 		}
 	}
