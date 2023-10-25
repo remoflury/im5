@@ -23,7 +23,7 @@
 		</div>
 	</button>
 	{#if isOpen}
-		<p class="pt-4" transition:slide={{ duration: 350 }}>{description}</p>
+		<p aria-expanded={isOpen} class="pt-4" transition:slide={{ duration: 350 }}>{description}</p>
 	{/if}
 	<p />
 </div>

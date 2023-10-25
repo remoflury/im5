@@ -1,29 +1,30 @@
-import { error } from "@sveltejs/kit";
-import type { PageServerLoad } from "./$types";
-import { createDashboardProjectResult } from "$lib/utils/generalUtils";
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+import { createDashboardProjectResult } from '$lib/utils/generalUtils';
 
-export const load: PageServerLoad = async ({locals: {getSession, supabase}}) => {
-  const session = await getSession()
-  
-  if (!session) throw error(401, 'Unauthorized')
+export const load: PageServerLoad = async ({ locals: { getSession, supabase } }) => {
+	const session = await getSession();
 
-  const userId = session.user.id
+	if (!session) throw error(401, 'Unauthorized');
 
-  
-  // get all project from current user
-  const { data: projects, error: err} = await supabase
-    .from('users_projects')
-    .select(`
+	const userId = session.user.id;
+
+	// get all project from current user
+	const { data: projects, error: err } = await supabase
+		.from('users_projects')
+		.select(
+			`
       projects (
         name,
         description
-      )`)
-    .eq('users_uid', userId)
-    
-    // .select('project_id')
-  if (err) throw error(500, err.message)
+      )`
+		)
+		.eq('users_uid', userId);
 
-  return {
-    projects: createDashboardProjectResult(projects)
-  }
+	// .select('project_id')
+	if (err) throw error(500, err.message);
+
+	return {
+		projects: createDashboardProjectResult(projects)
+	};
 };

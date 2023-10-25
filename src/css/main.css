@@ -3,42 +3,42 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply min-h-screen text-black
-  }
+	html {
+		@apply min-h-screen text-black;
+	}
 
-  h1 {
-    @apply mb-8 lg:mb-10 xl:mb-14 text-3xl
-  }
+	h1 {
+		@apply mb-8 lg:mb-10 xl:mb-14 text-3xl;
+	}
 
-  h2 {
-    @apply mb-4 text-2xl
-  }
+	h2 {
+		@apply mb-4 text-2xl;
+	}
 
-  main > section {
-    @apply container my-8;
-    @apply grid grid-cols-4 gap-x-4;
-    @apply lg:grid-cols-8 2xl:grid-cols-12;
-  }
+	main > section {
+		@apply container my-8;
+		@apply grid grid-cols-4 gap-x-4;
+		@apply lg:grid-cols-8 2xl:grid-cols-12;
+	}
 
-  main > section > * {
-    @apply col-span-full;
-    @apply md:col-span-3 lg:col-span-4 md:!col-start-1 lg:!col-start-3 2xl:!col-start-5;
-  }
+	main > section > * {
+		@apply col-span-full;
+		@apply md:col-span-3 lg:col-span-4 md:!col-start-1 lg:!col-start-3 2xl:!col-start-5;
+	}
 
-  /* Form Styles */
-  label {
-    @apply text-sm
-  }
+	/* Form Styles */
+	label {
+		@apply text-sm;
+	}
 
-  input:not(input[type="radio"]),
-  textarea {
-    @apply px-4 py-2 border border-black block w-full;
-    @apply focus:outline-none focus:border-cyan
-  }
+	input:not(input[type='radio']),
+	textarea {
+		@apply px-4 py-2 border border-black block w-full;
+		@apply focus:outline-none focus:border-cyan;
+	}
 
-  select {
-    @apply px-4 py-2 border-black block w-full ;
-    @apply focus:outline-none focus:ring-1 focus:ring-cyan
-  }
+	select {
+		@apply px-4 py-2 border-black block w-full;
+		@apply focus:outline-none focus:ring-1 focus:ring-cyan;
+	}
 }

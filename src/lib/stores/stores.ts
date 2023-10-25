@@ -1,6 +1,6 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 export const menu = writable({
-  isOpen: false,
-  menuHeight: 0
-})
+	isOpen: false,
+	menuHeight: 0
+});
