@@ -5,6 +5,8 @@
 	import { slide } from 'svelte/transition';
 	import { menu } from '$lib/stores/stores';
 	import Burger from '$lib/ui/nav/burger.svelte';
+	import PrimaryButton from './primaryButton.svelte';
+	import { enhance } from '$app/forms';
 
 	let navElem: HTMLElement;
 
@@ -65,6 +67,11 @@
 							</li>
 						{/if}
 					{/each}
+					<li class="mt-8">
+						<form action="/?/logout" method="post" use:enhance>
+							<PrimaryButton text="Logout" />
+						</form>
+					</li>
 				</ul>
 			</aside>
 		{/if}

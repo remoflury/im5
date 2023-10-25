@@ -26,3 +26,8 @@ export type NameWithCompanyProps = {
   user_uid: string,
   company: string
 }
+
+export type DashboardProjectProps = {
+  name: string,
+  description: string
+}

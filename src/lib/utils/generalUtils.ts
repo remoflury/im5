@@ -1,4 +1,4 @@
-import type { NameWithCompanyProps } from "$lib/types/types";
+import type { DashboardProjectProps, NameWithCompanyProps } from "$lib/types/types";
 
 export const createNameWithCompanyResult = (input: any): NameWithCompanyProps[] => {
   const results: NameWithCompanyProps[] = input.map((entry: any) => {
@@ -10,6 +10,17 @@ export const createNameWithCompanyResult = (input: any): NameWithCompanyProps[] 
     }
   })
 
+
+  return results
+}
+
+export const createDashboardProjectResult = (input: any): DashboardProjectProps[] => {
+  const results: DashboardProjectProps[] = input.map((project: any) => {
+    return {
+      name: project.projects.name,
+      description: project.projects.description,
+    }
+  })
 
   return results
 }
