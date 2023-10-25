@@ -20,7 +20,8 @@
     @apply text-sm
   }
 
-  input:not(input[type="radio"]) {
+  input:not(input[type="radio"]),
+  textarea {
     @apply px-4 py-2 border border-black block w-full;
     @apply focus:outline-none focus:border-cyan
   }

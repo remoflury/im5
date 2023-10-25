@@ -27,6 +27,11 @@
 			visibleForRole: 'ADMIN'
 		},
 		{
+			title: 'Add new Project',
+			slug: '/add-project',
+			visibleForRole: 'ADMIN'
+		},
+		{
 			title: 'Settings',
 			slug: '/settings',
 			visibleForRole: 'USER'
