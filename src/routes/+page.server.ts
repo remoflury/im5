@@ -1,6 +1,14 @@
 import { loginSchema } from "$lib/utils/zodSchemas";
-import { fail, type Actions } from "@sveltejs/kit";
+import { fail, type Actions, redirect } from "@sveltejs/kit";
 import { ZodError } from "zod";
+import type { PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = async ({ locals: {getSession}}) => {
+  const session = await getSession()
+
+  // redirect if logged in
+  if (session) throw redirect(300, '/dashboard')
+};
 
 export const actions: Actions = {
   login: async ({request, url, locals: { supabase }}) => {
