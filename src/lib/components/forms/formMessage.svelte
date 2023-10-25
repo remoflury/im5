@@ -4,7 +4,7 @@
 	export let additionalMessage: string = '';
 </script>
 
-<p class="bg-opacity-25 px-6 py-4 {success ? 'text-green bg-green' : 'text-red bg-red'}">
+<p class="px-6 py-4 {success ? 'text-white bg-green' : 'text-white bg-red'}">
 	{message}
 	{#if additionalMessage}
 		<br />
