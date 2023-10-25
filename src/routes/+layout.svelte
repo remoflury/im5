@@ -2,7 +2,6 @@
 	import '../css/main.css';
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
-	import NavComponent from '$lib/components/navComponent.svelte';
 	export let data;
 
 	// const { supabase, session } = data;
@@ -21,9 +20,6 @@
 	});
 </script>
 
-{#if data.session}
-	<NavComponent />
-{/if}
 <main>
 	<slot />
 </main>
