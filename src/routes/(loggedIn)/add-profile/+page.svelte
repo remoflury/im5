@@ -49,9 +49,12 @@
 		<div class="mt-4">
 			<label for="is-admin">Is user an admin?</label>
 			<fieldset id="is-admin">
-				<div class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-1">
-					<label for="is-admin-false">No</label>
+				<div
+					class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-1 group hover:cursor-pointer"
+				>
+					<label for="is-admin-false" class="group-hover:cursor-pointer">No</label>
 					<input
+						class="group-hover:cursor-pointer"
 						type="radio"
 						name="is_admin"
 						id="is-admin-false"
@@ -60,9 +63,12 @@
 						on:change={() => (isAdmin = false)}
 					/>
 				</div>
-				<div class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-2">
-					<label for="is-admin-true">Yes</label>
+				<div
+					class="flex flex-row-reverse gap-x-4 items-center justify-end accent-cyan mt-2 group max-w-max hover:cursor-pointer"
+				>
+					<label for="is-admin-true" class="group-hover:cursor-pointer">Yes</label>
 					<input
+						class="group-hover:cursor-pointer"
 						type="radio"
 						name="is_admin"
 						id="is-admin-true"

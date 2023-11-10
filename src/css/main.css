@@ -31,7 +31,7 @@
 	}
 
 	/* Form Styles */
-	label {
+	label, select {
 		@apply text-sm;
 	}
 
@@ -42,7 +42,7 @@
 	}
 
 	select {
-		@apply px-4 py-2 border-black block w-full;
+		@apply px-4 py-2 border border-black block w-full bg-white hover:cursor-pointer;
 		@apply focus:outline-none focus:ring-1 focus:ring-cyan;
 	}
 }
