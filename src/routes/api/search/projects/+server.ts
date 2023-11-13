@@ -11,9 +11,7 @@ export const GET: RequestHandler = async ({url, locals: {getSession, supabase}})
     .from('projects')
     .select('name, description')
     .ilike('name', `%${searchQuery}%`)
-  console.log(err)
   if (err) return new Response(JSON.stringify({error: 'Unexpected error while fetching the projects'}), { status: 500 });
-  // console.log(data)
 
  
   return new Response(JSON.stringify(data));
