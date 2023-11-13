@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
+	import { createEventDispatcher } from 'svelte';
 
 	export let type: string;
 	export let fieldName: string;
@@ -13,6 +14,7 @@
 	let inputElemHeight: number;
 	let labelElem: HTMLLabelElement;
 	let preventTransform = false;
+	const dispatch = createEventDispatcher();
 
 	onMount(() => {
 		inputElemHeight = inputElem.clientHeight;
@@ -24,6 +26,12 @@
 
 		if (value) preventTransform = true;
 		if (!value) preventTransform = false;
+	};
+
+	const handleChange = () => {
+		dispatch('handleChange', {
+			inputValue: inputElem.value
+		});
 	};
 </script>
 
@@ -40,7 +48,10 @@
 		{/if}
 	</label>
 	<input
-		on:input={isInputEmpty}
+		on:input={(event) => {
+			isInputEmpty(event);
+			handleChange();
+		}}
 		on:focusin={() => {
 			labelElem.style.transform = `translateY(-50%)`;
 		}}
