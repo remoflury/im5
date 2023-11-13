@@ -19,7 +19,6 @@
 		if (!searchQuery) return (searchedProjects = []);
 		const response = await fetch(`/api/search/projects?search=${searchQuery}`);
 		const data = await response.json();
-		console.log(data);
 		searchedProjects = [...data];
 	};
 </script>

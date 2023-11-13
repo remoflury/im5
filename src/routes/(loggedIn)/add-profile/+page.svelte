@@ -20,7 +20,6 @@
 		if (!searchQuery) return (searchedProfiles = []);
 		const response = await fetch(`/api/search/profiles?search=${searchQuery}`);
 		const data = await response.json();
-		console.log(data);
 		searchedProfiles = [...data];
 	};
 </script>
