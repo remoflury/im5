@@ -35,3 +35,8 @@ export type SearchedCompanyProps = {
 	company: string;
 	company_id: string;
 }
+
+export type SearchedProfileProps = {
+	first_name: string,
+	last_name: string
+}

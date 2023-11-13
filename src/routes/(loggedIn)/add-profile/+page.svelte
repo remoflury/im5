@@ -4,15 +4,25 @@
 	import FormMessage from '$lib/components/forms/formMessage.svelte';
 	import Link from '$lib/components/link.svelte';
 	import PrimaryButton from '$lib/components/primaryButton.svelte';
+	import type { SearchedProfileProps } from '$lib/types/types.js';
 	import { slide } from 'svelte/transition';
 
 	export let data;
 	export let form;
 
 	let isAdmin = false;
+	let searchedProfiles: SearchedProfileProps[] = [];
 
 	let loading = false;
 	$: if (form) loading = false;
+
+	const handleSearch = async (searchQuery: string) => {
+		if (!searchQuery) return (searchedProfiles = []);
+		const response = await fetch(`/api/search/profiles?search=${searchQuery}`);
+		const data = await response.json();
+		console.log(data);
+		searchedProfiles = [...data];
+	};
 </script>
 
 <section>
@@ -95,4 +105,26 @@
 	{/if}
 
 	<Link text="Company does not exists? Add company." href="/add-company" />
+</section>
+
+<section>
+	<h2>Search existing profiles</h2>
+	<form />
+	<InputField
+		on:handleChange={(e) => handleSearch(e.detail.inputValue)}
+		type="search"
+		fieldName="search"
+		label="Search for last names"
+	/>
+	{#if searchedProfiles.length}
+		<article>
+			<ul class="mt-4">
+				{#each searchedProfiles as profile}
+					<li>
+						<p>{profile.first_name} {profile.last_name}</p>
+					</li>
+				{/each}
+			</ul>
+		</article>
+	{/if}
 </section>
