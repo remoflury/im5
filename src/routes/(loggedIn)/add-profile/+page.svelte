@@ -39,7 +39,7 @@
 
 		<div class="mt-4">
 			<label for="company">Company <sup class="text-red">*</sup></label>
-			<select name="company" id="company" required multiple>
+			<select name="company" id="company" required>
 				{#each data.companies as company (company.id)}
 					<option value={company.id}>{company.company}</option>
 				{/each}
