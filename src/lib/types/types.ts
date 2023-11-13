@@ -40,3 +40,8 @@ export type SearchedProfileProps = {
 	first_name: string,
 	last_name: string
 }
+
+export type SearchedProjectProps = {
+	name: string,
+	description:string
+}
