@@ -35,6 +35,10 @@ export const actions: Actions = {
 			}
 		}
 
+		console.log(formData.is_admin)
+		console.log(formData.company)
+
+
 		// add user, use supabase auth admin
 		const { data: user, error: err } = await adminSupabase.auth.admin.createUser({
 			email: formData.email.toString(),
@@ -63,10 +67,9 @@ export const actions: Actions = {
 					email: formData.email,
 					first_name: formData.first_name,
 					last_name: formData.last_name,
-					role: formData.is_admin ? 'ADMIN' : 'USER'
+					role: formData.is_admin == 'true' ? 'ADMIN' : 'USER'
 				}
 			])
-			.select();
 
 		if (err2) throw error(500, err2.message);
 
