@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ locals: { supabase } }) => {
 	const { data: companies, error: err } = await supabase.from('companies').select('*');
 
 	if (err) {
-		console.log(err);
+		console.error(err);
 		throw error(500, err.message);
 	}
 

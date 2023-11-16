@@ -31,7 +31,6 @@ export const load: PageServerLoad = async ({ locals: { getSession, supabase } })
 export const actions: Actions = {
 	addproject: async ({ request, locals: { supabase } }) => {
 		const formData = Object.fromEntries(await request.formData());
-		console.log(formData);
 
 		try {
 			addNewProjectSchema.parse(formData);
