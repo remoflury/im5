@@ -21,7 +21,6 @@ export const load: PageServerLoad = async ({ locals: { getSession, supabase } })
 		)
 		.eq('users_uid', userId);
 
-	// .select('project_id')
 	if (err) throw error(500, err.message);
 
 	return {

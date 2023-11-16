@@ -12,7 +12,6 @@ export const actions: Actions = {
 		} catch (err: unknown) {
 			if (err instanceof ZodError) {
 				const { fieldErrors: errors } = err.flatten();
-				// const {  ...rest } = formData
 				return {
 					data: formData,
 					errors

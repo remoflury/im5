@@ -21,7 +21,6 @@
 <section>
 	<h2>Change your name</h2>
 	<form action="?/editname" use:enhance method="post">
-		<!-- <InputField /> -->
 		<InputField type="text" label="First name" fieldName="first_name" />
 		<InputField type="text" label="Last name" fieldName="last_name" />
 		{#if !loading}

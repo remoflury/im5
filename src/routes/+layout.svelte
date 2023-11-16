@@ -4,7 +4,6 @@
 	import { invalidate } from '$app/navigation';
 	export let data;
 
-	// const { supabase, session } = data;
 	$: ({ supabase, session } = data);
 
 	onMount(() => {
@@ -49,7 +48,6 @@
 
 	@-webkit-keyframes move {
 		from {
-			/* transform: translate(-20px, -50px) rotate(-90deg); */
 			transform: translate(-40%, -35%) rotate(-90deg);
 			border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
 		}
@@ -61,7 +59,6 @@
 	}
 	@keyframes move {
 		from {
-			/* transform: translate(-20px, -50px) rotate(-90deg); */
 			transform: translate(-40%, -35%) rotate(-90deg);
 			border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
 		}

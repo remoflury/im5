@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import PrimaryButton from '$lib/components/primaryButton.svelte';
 </script>
 
 <section>
