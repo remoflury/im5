@@ -8,8 +8,7 @@ export const actions: Actions = {
 
 		// validation
 		try {
-			const result = loginSchema.parse(formData);
-			console.log(result);
+			loginSchema.parse(formData);
 		} catch (err: unknown) {
 			if (err instanceof ZodError) {
 				const { fieldErrors: errors } = err.flatten();
