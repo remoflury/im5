@@ -1,7 +1,6 @@
 # Projekt IM5
 
 ## Projekt Setup
-
 Installiere alle Dependencies.
 
 ```bash
@@ -17,23 +16,21 @@ npm run dev
 ```
 
 ## Ziel
-
-Die Bachelorarbeit befasst sich mit dem Thema Kundenbindung in Agenturen. Deshalb habe ich ein rudimentäres Tool erstellt, auf dem sich auserwählte Kunden einloggen können und ihre aktuellen Projekte einsehen.
+Die Bachelorarbeit befasst sich mit dem Thema Kundenbindung in Agenturen. Deshalb habe ich ein rudimentäres Tool erstellt, auf dem sich auserwählte Kunden einloggen können und ihre aktuellen Projekte bei der Agentur einsehen können.
 Kunden können sich nicht selber registrieren, da nicht jeder Kunde Zugriff zur Plattform haben soll.
 Das heisst, dass aber jede Person der Agentur neue Kunden dem Portal freischalten muss, sodass sich diese Kunden nur noch einloggen können.
 Somit gibt es zwei Rollen: User und Admins.
 
 1. Admins
    Die Berechtigungen und Funktionen für Admins sind umfänglicher:
-1. Sie müssen Firmen hinzufügen können.
-1. Sie müssen Personen hinzufügen können. So wird auch gleich ein Login auf ihre Emailadresse erstellt. Die Personen werden auch einer Firma zugeteilt, da es möglich ist mehrere Kundenlogins pro Kunde zu haben.
-1. Sie müssen Projekte erfassen können und einer Person zuweisen.
+   - Sie müssen Firmen hinzufügen können.
+   - Sie müssen Personen hinzufügen können. So wird auch gleich ein Login auf ihre Emailadresse erstellt. Die Personen werden auch einer Firma zugeteilt, da es möglich ist mehrere Kundenlogins pro Kunde zu haben.
+   - Sie müssen Projekte erfassen können und einer Person zuweisen.
 
-1. User
-   Haben aktuell nur Einsicht in die ihnen zugewiesenen Projekte.
+2. User
+   - Haben aktuell nur Einsicht in die ihnen zugewiesenen Projekte und die Settings, wo sie ihren Name ändern können.
 
 ## Techstack
-
 Das Tool benutzt folgende Technologien:
 
 1. Svelte bzw. SvelteKit als JS-Framework (mit SSR)
