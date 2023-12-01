@@ -45,6 +45,6 @@ Auch die Nutzung von Zod war eine Challenge, da ich dies vorher noch nie benutzt
 
 ## Quellen
 
-1. offizielle Dokumentationen (SvelteKit, Supabase, Zod)
+1. offizielle Dokumentationen (SvelteKit, Supabase, Tailwind, Zod)
 2. Stackoverflow
 3. ChatGPT
