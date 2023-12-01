@@ -54,5 +54,5 @@ export const editNamesSchema = z.object({
 		.min(1, { message: 'First Name is required.' }),
 	last_name: z
 		.string({ required_error: 'Last Name is required.' })
-		.min(1, { message: 'Last Name is required.' }),
-})
+		.min(1, { message: 'Last Name is required.' })
+});

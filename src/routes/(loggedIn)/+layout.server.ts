@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ({ locals: { supabase, getSession } })
 	const session = await getSession();
 
 	// error handling
-	if (!session) throw error(401, { message: 'Unauthorized' })
+	if (!session) throw error(401, { message: 'Unauthorized' });
 	const userId = session.user.id;
 
 	// get user profile

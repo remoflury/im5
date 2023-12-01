@@ -14,7 +14,7 @@ export type UserTableProps = {
 
 export interface CompanyProps extends SearchedCompanyProps {
 	id: number;
-};
+}
 
 export type UserRoleProps = 'ADMIN' | 'USER';
 
@@ -30,18 +30,17 @@ export type DashboardProjectProps = {
 	description: string;
 };
 
-
 export type SearchedCompanyProps = {
 	company: string;
 	company_id: string;
-}
+};
 
 export type SearchedProfileProps = {
-	first_name: string,
-	last_name: string
-}
+	first_name: string;
+	last_name: string;
+};
 
 export type SearchedProjectProps = {
-	name: string,
-	description:string
-}
+	name: string;
+	description: string;
+};

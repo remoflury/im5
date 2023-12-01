@@ -54,18 +54,16 @@ export const actions: Actions = {
 		const userId = user.user.id;
 
 		// add user to profiles table
-		const { error: err2 } = await supabase
-			.from('profiles')
-			.insert([
-				{
-					user_uid: userId,
-					company: formData.company,
-					email: formData.email,
-					first_name: formData.first_name,
-					last_name: formData.last_name,
-					role: formData.is_admin == 'true' ? 'ADMIN' : 'USER'
-				}
-			])
+		const { error: err2 } = await supabase.from('profiles').insert([
+			{
+				user_uid: userId,
+				company: formData.company,
+				email: formData.email,
+				first_name: formData.first_name,
+				last_name: formData.last_name,
+				role: formData.is_admin == 'true' ? 'ADMIN' : 'USER'
+			}
+		]);
 
 		if (err2) throw error(500, err2.message);
 
