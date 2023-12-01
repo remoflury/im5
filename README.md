@@ -28,7 +28,7 @@ Somit gibt es zwei Rollen: User und Admins.
    - Sie müssen Projekte erfassen können und einer Person zuweisen.
 
 2. User
-   - Haben aktuell nur Einsicht in die ihnen zugewiesenen Projekte und die Settings, wo sie ihren Name ändern können.
+   - Haben aktuell nur Einsicht in die ihnen zugewiesenen Projekte und die Settings, wo sie ihren Namen ändern können.
 
 ## Techstack
 Das Tool benutzt folgende Technologien:
