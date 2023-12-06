@@ -19,13 +19,15 @@
 		@apply mb-4 text-2xl;
 	}
 
+	main div.logged-in-container,
 	main > section {
 		@apply container py-8;
 		@apply grid grid-cols-4 gap-x-4;
 		@apply lg:grid-cols-8 2xl:grid-cols-12;
 	}
 
-	main > section > * {
+	main > section > *,
+	main div.logged-in-container > * {
 		@apply col-span-full;
 		@apply md:col-span-3 lg:col-span-4 md:!col-start-1 lg:!col-start-3 2xl:!col-start-5;
 	}
