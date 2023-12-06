@@ -64,7 +64,7 @@
 	{/if}
 </section>
 
-<section>
+<section class="mt-8 lg:mt-12">
 	<h2>Search existing projects</h2>
 	<form />
 	<InputField

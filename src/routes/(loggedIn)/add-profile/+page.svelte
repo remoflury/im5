@@ -106,7 +106,7 @@
 	<Link text="Company does not exists? Add company." href="/add-company" />
 </section>
 
-<section>
+<section class="mt-8 lg:mt-12">
 	<h2>Search existing profiles</h2>
 	<form />
 	<InputField

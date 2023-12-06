@@ -51,7 +51,7 @@
 	{/if}
 	<Link text="Company already exists? Add Profile to Customer." href="/add-profile" />
 </section>
-<section>
+<section class="mt-8 lg:mt-12">
 	<h2>Search existing companies</h2>
 	<form />
 	<InputField
